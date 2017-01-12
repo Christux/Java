@@ -65,53 +65,28 @@ public class MainWindowController {
     }
 		
 	
+private boolean matchWithRegex(TextField tf, String reg) {
+	
+	String error = "-fx-text-box-border: red;";
+	String noerror = "-fx-text-box-border: green;";
+	
+	if(!tf.getText().matches(reg)) {
+		tf.setStyle(error);
+		return false;
+	}
+	
+	tf.setStyle(noerror);
+	return true;
+}
 	
 private boolean checkValidity() {
 		
-		boolean result=true;
-		String error = "-fx-text-box-border: red;";
-		String noerror = "-fx-text-box-border: green;";
-    	
-		if(tflFirstName.getText().isEmpty()) {
-			tflFirstName.setStyle(error);
-			result=false;
-		} else {
-			tflFirstName.setStyle(noerror);
-		}
+		if(!matchWithRegex(tflFirstName,"^[a-z A-Z]+$")) return false;
+		if(!matchWithRegex(tflLastName,"^[a-z A-Z]+$")) return false;
+		if(!matchWithRegex(tflSize,"^[0-9]+$")) return false;
+		if(!matchWithRegex(tflWeight,"^[0-9]+$")) return false;
 		
-		if(tflLastName.getText().isEmpty()) {
-			tflLastName.setStyle(error);
-			result=false;
-		} else {
-			tflLastName.setStyle(noerror);
-		}
-		
-		if(tflSize.getText().isEmpty()) {
-			tflSize.setStyle(error);
-			result=false;
-			
-		} else {
-			if(!tflSize.getText().matches("^[0-9]+$")) {
-				tflSize.setStyle(error);
-				result=false;
-			}
-			else {
-				tflSize.setStyle(noerror);
-			}
-		}
-		
-		if(tflWeight.getText().isEmpty()) {
-			tflWeight.setStyle(error);
-			result=false;
-		} else {
-			if(!tflWeight.getText().matches("^[0-9]+$")) {
-				tflWeight.setStyle(error);
-				result=false;
-			}else {
-				tflWeight.setStyle(noerror);
-			}
-		}
-    	return result;
+    	return true;
     }
 	
 }
