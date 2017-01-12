@@ -14,8 +14,7 @@
 <?import javafx.scene.text.Text?>
 <?import javafx.scene.control.ToggleButton?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="application.MainWindowController">
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainWindowController">
 	<center>
 		<GridPane alignment="center" hgap="10" vgap="10">
 			<padding>
@@ -23,9 +22,7 @@
 			</padding>
 			<children>
 
-				<Text id="title" text="Body Mass Index calculator"
-					GridPane.columnIndex="0" GridPane.columnSpan="2"
-					GridPane.halignment="CENTER" GridPane.rowIndex="0">
+				<Text id="title" text="Body Mass Index calculator" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="0">
 					<font>
 						<Font name="Calibri" size="18.0" />
 					</font>
@@ -34,26 +31,17 @@
 					</GridPane.margin>
 				</Text>
 
-				<Label id="lblFirstname" text="Firstname"
-					GridPane.columnIndex="0" GridPane.rowIndex="1" />
-				<TextField id="tflFirstname" fx:id="tflFirstName"
-					GridPane.columnIndex="1" GridPane.rowIndex="1" />
-				<Label id="lblLastname" contentDisplay="RIGHT" text="Lastname"
-					GridPane.columnIndex="0" GridPane.rowIndex="2" />
-				<TextField id="tflLastame" fx:id="tflLastName"
-					GridPane.columnIndex="1" GridPane.rowIndex="2" />
+				<Label text="Firstname" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+				<TextField fx:id="tflFirstName" onInputMethodTextChanged="#checkFirstNames" onKeyPressed="#checkFirstNames" onKeyReleased="#checkFirstNames" onKeyTyped="#checkFirstNames" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+				<Label contentDisplay="RIGHT" text="Lastname" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+				<TextField fx:id="tflLastName" onInputMethodTextChanged="#checkLastNames" onKeyPressed="#checkLastNames" onKeyReleased="#checkLastNames" onKeyTyped="#checkLastNames" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-				<Label id="lblGender" contentDisplay="RIGHT" text="Gender"
-					GridPane.columnIndex="0" GridPane.rowIndex="3" />
-				<Label id="lblSize" text="Size" textAlignment="RIGHT"
-					GridPane.rowIndex="4" />
-				<TextField id="tflSize" fx:id="tflSize"
-					GridPane.columnIndex="1" GridPane.rowIndex="4" />
-				<Label id="lblWeight" text="Weight" GridPane.rowIndex="5" />
-				<TextField id="tflWeight" fx:id="tflWeight"
-					GridPane.columnIndex="1" GridPane.rowIndex="5" />
-				<HBox prefHeight="0.0" prefWidth="75.0" GridPane.columnIndex="1"
-					GridPane.rowIndex="3">
+				<Label contentDisplay="RIGHT" text="Gender" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+				<Label text="Size" textAlignment="RIGHT" GridPane.rowIndex="4" />
+				<TextField fx:id="tflSize" onInputMethodTextChanged="#checkSize" onKeyPressed="#checkSize" onKeyReleased="#checkSize" onKeyTyped="#checkSize" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+				<Label text="Weight" GridPane.rowIndex="5" />
+				<TextField fx:id="tflWeight" onInputMethodTextChanged="#checkWeight" onKeyPressed="#checkWeight" onKeyReleased="#checkWeight" onKeyTyped="#checkWeight" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+				<HBox prefHeight="0.0" prefWidth="75.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
 					<children>
 
 						<RadioButton selected="true" text="M">
@@ -68,23 +56,16 @@
 					</children>
 				</HBox>
 				<Label text="BMI" GridPane.rowIndex="7" />
-				<Button mnemonicParsing="false" onAction="#run" text="Compute BMI"
-					GridPane.rowIndex="6" GridPane.columnSpan="2"
-					GridPane.halignment="CENTER"/>
+				<Button fx:id="button" disable="true" mnemonicParsing="false" onAction="#run" text="Compute BMI" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
 				<Label text="Diagnosys" GridPane.rowIndex="8" />
 				<Label text="Minimum weight" GridPane.rowIndex="9" />
 				<Label text="Maximum weight" GridPane.rowIndex="10" />
 				<Label text="Ideal weight" GridPane.rowIndex="11" />
-				<TextField fx:id="tflBmi" GridPane.columnIndex="1"
-					GridPane.rowIndex="7" disable="true"/>
-				<TextField fx:id="tflDiag" GridPane.columnIndex="1"
-					GridPane.rowIndex="8" disable="true"/>
-				<TextField fx:id="tflMinWeight" GridPane.columnIndex="1"
-					GridPane.rowIndex="9" disable="true"/>
-				<TextField fx:id="tflMaxWeight" GridPane.columnIndex="1"
-					GridPane.rowIndex="10" disable="true"/>
-				<TextField fx:id="tflIdealWeight" GridPane.columnIndex="1"
-					GridPane.rowIndex="11" disable="true"/>
+				<TextField fx:id="tflBmi" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+				<TextField fx:id="tflDiag" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+				<TextField fx:id="tflMinWeight" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+				<TextField fx:id="tflMaxWeight" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+				<TextField fx:id="tflIdealWeight" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="11" />
 			</children>
 			<columnConstraints>
 				<ColumnConstraints halignment="RIGHT" />
