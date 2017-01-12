@@ -10,3 +10,6 @@ Some Java projects realized in courses
 A simple bmi calculator with JavaFX and JavaFXML
 
 ![BmiCalculator](BmiCalculator.png)
+
+## License
+The project code is distributed under the LGPL
