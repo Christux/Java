@@ -9,11 +9,14 @@ import javafx.animation.Animation;
 import javafx.animation.Animation.Status;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class GameOfLifeController implements Initializable {
@@ -66,17 +69,27 @@ public class GameOfLifeController implements Initializable {
 		}
 	}
 	
+	
+	
 	@FXML
 	HBox cellgrid;
+	
+	/*@FXML
+	MenuItem exit;*/
 	
 	@FXML
 	Button runButton;
 	
-	@FXML
+	/*@FXML
     Button resetButton;
 	
 	@FXML
-    Button randButton;
+    Button randButton;*/
+	
+	@FXML
+	public void exit() {
+		Platform.exit();
+	}
 	
 	@FXML
 	public void clickOnGrid(MouseEvent event) {
