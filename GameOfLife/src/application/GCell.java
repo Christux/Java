@@ -1,18 +1,24 @@
 package application;
 
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Polygon;
+
 public class GCell {
 	
-	int x,y;
-	int size;
-
-	public GCell(int x, int y, int size) {
-		this.x=x;
-		this.y=y;
-		this.size=size;
+	private Polygon polygon;
+	
+	public GCell(double i, double j, double width) {
+		
+		polygon = new Polygon();
+        polygon.getPoints().addAll(new Double[]{
+            i, j,
+            i+width, j,
+            i+width, j+width,
+            i, j+width});
+        polygon.setStroke(Color.LIGHTGRAY);
 	}
 	
-	public void update(boolean isAlive) {
-		
+	public Polygon getPolygon() {
+		return polygon;
 	}
-
 }

@@ -67,6 +67,14 @@ public abstract class AGameOfLife {
 	
 	protected abstract void rules(Cell cell, int nNeighboors);
 	
+	public void reset() {
+		for(int i=0; i<m; i++) {
+			for(int j=0; j<n; j++) {
+				cells.killCell(i, j);
+			}
+		}
+	}
+	
 	@Override
 	public String toString() {
 

@@ -6,4 +6,5 @@ public interface IGameOfLife {
 	void bornCell(int i, int j);
 	void killCell(int i, int j);
 	void nextStep();
+	void reset();
 }
