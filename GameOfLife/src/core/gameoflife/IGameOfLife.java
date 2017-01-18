@@ -1,7 +1,6 @@
 package core.gameoflife;
 
 import core.entities.CellGrid;
-import core.entities.NeighboorGrid;
 
 public interface IGameOfLife {
 	
@@ -12,6 +11,5 @@ public interface IGameOfLife {
 	void reset();
 	
 	CellGrid getCells();
-	NeighboorGrid getNeighboors();
 	void importPattern(int i, int j, String[] figure);
 }

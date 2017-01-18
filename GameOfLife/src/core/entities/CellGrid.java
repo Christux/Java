@@ -30,4 +30,12 @@ public class CellGrid {
 		if(i<0 || j<0 || i>=m || j>=n) return false;
 		return cellGrid[i*n+j].isAlive();
 	}
+	
+	public void setNeighboor(int i, int j, int value) {
+		cellGrid[i*n+j].setNeighboor(value);
+	}
+
+	public int getNeighboor(int i, int j) {
+		return cellGrid[i*n+j].getNeighboor();
+	}
 }

@@ -2,26 +2,23 @@ package core.gameoflife;
 
 import core.entities.Cell;
 import core.entities.CellGrid;
-import core.entities.NeighboorGrid;
 
 public abstract class AGameOfLife {
 
 	private int m;
 	private int n;
 	private CellGrid cells;
-	private NeighboorGrid neighboors;
 
-	public AGameOfLife(int m, int n, CellGrid cells, NeighboorGrid neighboors) {
+	public AGameOfLife(int m, int n, CellGrid cells) {
 
 		this.m=m;
 		this.n=n;
 		this.cells=cells;
-		this.neighboors=neighboors;
 	}
 	
 	public AGameOfLife(int m, int n) {
 
-		this(m,n,new CellGrid(m,n),new NeighboorGrid(m,n));
+		this(m,n,new CellGrid(m,n));
 	}
 	 
 
@@ -29,9 +26,6 @@ public abstract class AGameOfLife {
 		return cells;
 	}
 
-	public NeighboorGrid getNeighboors() {
-		return neighboors;
-	}
 
 	public boolean isAlive(int i, int j) {
 		return this.cells.isAlive(i, j);
@@ -62,7 +56,7 @@ public abstract class AGameOfLife {
 	private void computeNeighboors() {
 		for(int i=0; i<m; i++) {
 			for(int j=0; j<n; j++) {
-				neighboors.setNeighboor(i, j,countNeighboors(i,j));
+				cells.setNeighboor(i, j,countNeighboors(i,j));
 			}
 		}
 	}
@@ -74,12 +68,12 @@ public abstract class AGameOfLife {
 		for(int i=0; i<m; i++) {
 			for(int j=0; j<n; j++) {
 
-				rules(cells.getCell(i,j), neighboors.getNeighboor(i,j));
+				rules(cells.getCell(i,j));
 			}
 		}
 	}
 	
-	protected abstract void rules(Cell cell, int nNeighboors);
+	protected abstract void rules(Cell cell);
 	
 	public void reset() {
 		for(int i=0; i<m; i++) {
@@ -114,9 +108,5 @@ public abstract class AGameOfLife {
 			grid+="\n";
 		}
 		return grid;
-	}
-
-	public String printNeighboors() {
-		return neighboors.toString();
 	}
 }

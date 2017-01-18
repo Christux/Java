@@ -167,17 +167,17 @@ public class GameOfLifeController implements Initializable {
 	
 	@FXML
 	public void changeRulesToClassic() {
-		gol = new GameOfLifeClassic(m,n,gol.getCells(),gol.getNeighboors());
+		gol = new GameOfLifeClassic(m,n,gol.getCells());
 	}
 	
 	@FXML
 	public void changeRulesToHighLife() {
-		gol = new HighLife(m,n,gol.getCells(),gol.getNeighboors());
+		gol = new HighLife(m,n,gol.getCells());
 	}
 	
 	@FXML
 	public void changeRulesToDayAndNight() {
-		gol = new DayAndNight(m,n,gol.getCells(),gol.getNeighboors());
+		gol = new DayAndNight(m,n,gol.getCells());
 	}
 	
 	/*

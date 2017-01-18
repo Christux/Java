@@ -2,7 +2,6 @@ package core.gameoflife;
 
 import core.entities.Cell;
 import core.entities.CellGrid;
-import core.entities.NeighboorGrid;
 
 public class HighLife extends AGameOfLife implements IGameOfLife{
 
@@ -10,19 +9,19 @@ public class HighLife extends AGameOfLife implements IGameOfLife{
 		super(m, n);
 	}
 	
-	public HighLife(int m, int n, CellGrid cells, NeighboorGrid neighboors) {
-		super(m, n,cells,neighboors);
+	public HighLife(int m, int n, CellGrid cells) {
+		super(m, n,cells);
 	}
 
 	@Override
-	protected void rules(Cell cell, int nNeighboors) {
+	protected void rules(Cell cell) {
 		
-		if (!cell.isAlive() && (nNeighboors==3 || nNeighboors==6) ) {
+		if (!cell.isAlive() && (cell.getNeighboor()==3 || cell.getNeighboor()==6) ) {
 			cell.born();
 		}
 		else {
 
-			if (cell.isAlive() && (nNeighboors==2 || nNeighboors==3)) {
+			if (cell.isAlive() && (cell.getNeighboor()==2 || cell.getNeighboor()==3)) {
 				cell.born();
 			}
 			else {

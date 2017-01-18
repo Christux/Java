@@ -2,7 +2,6 @@ package core.gameoflife;
 
 import core.entities.Cell;
 import core.entities.CellGrid;
-import core.entities.NeighboorGrid;
 
 public class DayAndNight extends AGameOfLife implements IGameOfLife {
 
@@ -10,19 +9,19 @@ public class DayAndNight extends AGameOfLife implements IGameOfLife {
 		super(m, n);
 	}
 	
-	public DayAndNight(int m, int n, CellGrid cells, NeighboorGrid neighboors) {
-		super(m, n,cells,neighboors);
+	public DayAndNight(int m, int n, CellGrid cells) {
+		super(m, n,cells);
 	}
 
 	@Override
-	protected void rules(Cell cell, int nNeighboors) {
+	protected void rules(Cell cell) {
 		
-		if (!cell.isAlive() && (nNeighboors==3 || nNeighboors==6 || nNeighboors==7 || nNeighboors==8)) {
+		if (!cell.isAlive() && (cell.getNeighboor()==3 || cell.getNeighboor()==6 || cell.getNeighboor()==7 || cell.getNeighboor()==8)) {
 			cell.born();
 		}
 		else {
 
-			if (cell.isAlive() && (nNeighboors==3 || nNeighboors==4 || nNeighboors==6 || nNeighboors==7 || nNeighboors==8)) {
+			if (cell.isAlive() && (cell.getNeighboor()==3 || cell.getNeighboor()==4 || cell.getNeighboor()==6 || cell.getNeighboor()==7 || cell.getNeighboor()==8)) {
 				cell.born();
 			}
 			else {
