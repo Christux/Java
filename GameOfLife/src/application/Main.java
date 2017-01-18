@@ -16,11 +16,8 @@ public class Main extends Application {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("GameOfLife.fxml"));
 			BorderPane root = (BorderPane)loader.load();
-			//BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("GameOfLife.fxml"));
-			//BorderPane root = new BorderPane();
 			
-			Scene scene = new Scene(root,400,460);
-			//Scene scene = new Scene(root,n*cellWidth,m*cellWidth+30);
+			Scene scene = new Scene(root,800,660);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			
 	        primaryStage.setTitle("Game Of Life");

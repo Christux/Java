@@ -1,11 +1,17 @@
 package core.gameoflife;
 
 import core.entities.Cell;
+import core.entities.CellGrid;
+import core.entities.NeighboorGrid;
 
-public class GameOfLifeClassicRules extends AGameOfLife implements IGameOfLife{
+public class GameOfLifeClassic extends AGameOfLife implements IGameOfLife{
 
-	public GameOfLifeClassicRules(int m, int n) {
+	public GameOfLifeClassic(int m, int n) {
 		super(m, n);
+	}
+	
+	public GameOfLifeClassic(int m, int n, CellGrid cells, NeighboorGrid neighboors) {
+		super(m, n,cells,neighboors);
 	}
 	
 	@Override

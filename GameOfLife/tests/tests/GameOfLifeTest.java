@@ -4,7 +4,7 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import core.gameoflife.GameOfLifeClassicRules;
+import core.gameoflife.GameOfLifeClassic;
 import core.gameoflife.IGameOfLife;
 
 public class GameOfLifeTest {
@@ -12,7 +12,7 @@ public class GameOfLifeTest {
 	@Test
 	public void test() {
 		
-		IGameOfLife gol = new GameOfLifeClassicRules(4,6);
+		IGameOfLife gol = new GameOfLifeClassic(4,6);
 		
 		gol.bornCell(2, 1);
 		gol.bornCell(2, 2);

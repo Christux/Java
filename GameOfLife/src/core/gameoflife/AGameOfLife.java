@@ -11,12 +11,26 @@ public abstract class AGameOfLife {
 	private CellGrid cells;
 	private NeighboorGrid neighboors;
 
-	public AGameOfLife(int m, int n) {
+	public AGameOfLife(int m, int n, CellGrid cells, NeighboorGrid neighboors) {
 
 		this.m=m;
 		this.n=n;
-		this.cells=new CellGrid(m,n);
-		this.neighboors=new NeighboorGrid(m,n);
+		this.cells=cells;
+		this.neighboors=neighboors;
+	}
+	
+	public AGameOfLife(int m, int n) {
+
+		this(m,n,new CellGrid(m,n),new NeighboorGrid(m,n));
+	}
+	 
+
+	public CellGrid getCells() {
+		return cells;
+	}
+
+	public NeighboorGrid getNeighboors() {
+		return neighboors;
 	}
 
 	public boolean isAlive(int i, int j) {
@@ -71,6 +85,17 @@ public abstract class AGameOfLife {
 		for(int i=0; i<m; i++) {
 			for(int j=0; j<n; j++) {
 				cells.killCell(i, j);
+			}
+		}
+	}
+	
+	public void importPattern(int i, int j, String[] figure) {
+
+		for(int k=0; k<figure.length;k++) {
+			for(int l=0; l<figure[k].length();l++) {
+				if(figure[k].charAt(l)=='#') {
+					bornCell(k+i,l+j);
+				}
 			}
 		}
 	}
