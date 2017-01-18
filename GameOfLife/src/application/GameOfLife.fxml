@@ -56,14 +56,14 @@
    <bottom>
       <ToolBar blendMode="DARKEN" prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
         <items>
-          <Button fx:id="runButton" mnemonicParsing="false" onAction="#pauseStart" text="Pause" />
+          <Button fx:id="runButton" mnemonicParsing="false" onAction="#pauseStart" style="-fx-translate-x: 0;" text="Pause" />
             <Button mnemonicParsing="false" onAction="#reset" text="Reset" />
             <Button mnemonicParsing="false" onAction="#random" text="Random" />
-            <Slider fx:id="speedSlider" blockIncrement="0.01" majorTickUnit="0.1" max="1.0" onMouseReleased="#speedChange" value="0.1" />
+            <Slider fx:id="speedSlider" blockIncrement="0.01" majorTickUnit="0.1" max="1.0" onMouseReleased="#speedChange" prefHeight="14.0" prefWidth="300.0" style="-fx-translate-x: 280;" value="0.1" />
         </items>
       </ToolBar>
    </bottom>
    <center>
-      <HBox fx:id="cellgrid" onMouseClicked="#clickOnGrid" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <HBox fx:id="cellgrid" onMouseClicked="#clickOnGrid" prefHeight="100.0" prefWidth="200.0" style="-fx-min-height: 600; -fx-min-width: 800;" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>
