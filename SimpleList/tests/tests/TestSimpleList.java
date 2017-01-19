@@ -5,6 +5,12 @@ import org.junit.Test;
 
 import list.SimpleList;
 
+/**
+ * Tests for simple list
+ * 
+ * @author Christux
+ *
+ */
 public class TestSimpleList {
 
 	@Test
@@ -105,6 +111,21 @@ public class TestSimpleList {
 		assertEquals(5, list.count());
 		assertEquals(0, list.find(a));
 		assertEquals(2, list.find(b));
+	}
+	
+	@Test
+	public void testInsert() {
+		SimpleList<Integer> list = new SimpleList<Integer>();
+		list.add(new Integer(0));
+		list.add(new Integer(2));
+		list.add(new Integer(-4));
+		list.add(new Integer(7));
+		list.add(new Integer(-2));
+		
+		list.insert(2,new Integer(666));
+		
+		assertEquals(new Integer(666), list.get(2));
+		assertEquals(new Integer(-4), list.get(3));
 	}
 
 }
