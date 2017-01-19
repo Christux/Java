@@ -39,24 +39,10 @@ public abstract class AGameOfLife {
 		this.cells.killCell(i, j);
 	}
 
-	private int countNeighboors(int i, int j) {
-		int count=0;
-
-		for(int m=0; m<3; m++) {
-			for(int n=0; n<3; n++) {
-
-				if(cells.isAlive(i+m-1, j+n-1)) count++;
-			}
-		}
-		if(cells.isAlive(i, j)) count--;
-
-		return count;
-	}
-
 	private void computeNeighboors() {
 		for(int i=0; i<m; i++) {
 			for(int j=0; j<n; j++) {
-				cells.setNeighboor(i, j,countNeighboors(i,j));
+				cells.countNeighboors(i,j);
 			}
 		}
 	}
@@ -83,7 +69,7 @@ public abstract class AGameOfLife {
 		}
 	}
 	
-	public void importPattern(int i, int j, String[] figure) {
+	public void importPattern(int i, int j, final String[] figure) {
 
 		for(int k=0; k<figure.length;k++) {
 			for(int l=0; l<figure[k].length();l++) {
