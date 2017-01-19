@@ -71,11 +71,40 @@ public class TestSimpleList {
 		
 		assertEquals(4, list.count());
 		assertEquals(new Integer(7), list.get(2));
+	}
+	
+	@Test
+	public void testDeleteFirst() {
+		SimpleList<Integer> list = new SimpleList<Integer>();
+		list.add(new Integer(0));
+		list.add(new Integer(2));
+		list.add(new Integer(-4));
+		list.add(new Integer(7));
+		list.add(new Integer(-2));
+		
+		assertEquals(5, list.count());
 		
 		list.delete(0);
 		
-		assertEquals(3, list.count());
+		assertEquals(4, list.count());
 		assertEquals(new Integer(2), list.get(0));
+	}
+	
+	@Test
+	public void testDeleteLast() {
+		SimpleList<Integer> list = new SimpleList<Integer>();
+		list.add(new Integer(0));
+		list.add(new Integer(2));
+		list.add(new Integer(-4));
+		list.add(new Integer(7));
+		list.add(new Integer(-2));
+		
+		assertEquals(5, list.count());
+		
+		list.delete(4);
+		
+		assertEquals(4, list.count());
+		assertEquals(new Integer(7), list.get(3));
 	}
 	
 	@Test
