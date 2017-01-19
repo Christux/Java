@@ -11,5 +11,10 @@ A simple bmi calculator with JavaFX and JavaFXML
 
 ![BmiCalculator](BmiCalculator.png)
 
+### Game Of Life
+Popular Conway's game of life
+
+![GameOfLife](GameOfLife.png)
+
 ## License
 The project code is distributed under the LGPL
